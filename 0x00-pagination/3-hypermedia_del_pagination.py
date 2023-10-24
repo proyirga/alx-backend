@@ -83,3 +83,17 @@ class Server:
             "prev_page": page - 1 if page > 1 else None,
             "total_pages": total_pages
             }
+    def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
+        if index is None:
+        index = 0
+        elif index >= len(self.dataset()):
+            return {}
+
+        data = self.dataset()[index:index+page_size]
+        next_index = index + page_size
+        return {
+            'index': index,
+            'next_index': next_index,
+            'page_size': page_size,
+            'data': data
+            }
