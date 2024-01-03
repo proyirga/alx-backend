@@ -60,9 +60,9 @@ class LFUCache(BaseCaching):
                     ins_index = i
                     break
             self.keys_freq.insert(ins_index, [key, 0])
-            else:
-                self.cache_data[key] = item
-                self.__reorder_items(key)
+        else:
+            self.cache_data[key] = item
+            self.__reorder_items(key)
 
     def get(self, key):
         """Retrieves an item by key.
