@@ -12,7 +12,7 @@ def index_range(page: int, page_size: int) -> tuple:
     Args:
     page: int
     page_size: int
-    
+
     Returns:
     tuple
     """
@@ -47,7 +47,7 @@ class Server:
         Args:
         page: int
         page_size: int
-        
+
         Returns:
         List[List]
         """
@@ -65,13 +65,13 @@ class Server:
         Args:
         page: int
         page_size: int
-        
+
         Returns:
         dict
         """
         assert isinstance(page, int) and isinstance(page_size, int), "Both arguments must be integers."
         assert page > 0 and page_size > 0, "Both arguments must be greater than 0."
-        
+
         dataset = self.get_page(page, page_size)
         total_pages = math.ceil(len(self.dataset()) / page_size)
         
