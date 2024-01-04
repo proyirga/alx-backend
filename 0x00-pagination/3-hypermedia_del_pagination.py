@@ -27,8 +27,7 @@ class Server:
                 dataset = [row for row in reader]
             self.__dataset = dataset[1:]    
         return self.__dataset
-
-                                        
+                                
     def indexed_dataset(self) -> Dict[int, List]:
         """Dataset indexed by sorting position, starting at 0
         """
@@ -39,7 +38,7 @@ class Server:
                 i: dataset[i] for i in range(len(dataset))                  
             }    
         return self.__indexed_dataset
-            
+
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """Retrieves info about a page from a given index and with a
         specified size.
